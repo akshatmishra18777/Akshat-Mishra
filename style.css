@@ -1,0 +1,1432 @@
+/* ==========================================================================
+   NEO-BRUTALIST STORYTELLING DESIGN SYSTEM // CAPT. VIKRAM BATRA (1999)
+   ========================================================================== */
+
+:root {
+  --black: #0a0a0a;
+  --white: #ffffff;
+  --cream: #FAF6ED;
+  --cream-dark: #ECE5D5;
+  --saffron: #FF671F;
+  --saffron-light: #FFE8D6;
+  --army-green: #2B5329;
+  --army-light: #E8F5E9;
+  --tiranga-green: #046A38;
+  --yellow: #FFE800;
+  --danger-red: #D90429;
+  --navy: #06038D;
+  --card-bg: #FFFFFF;
+  
+  --border-thick: 3.5px solid var(--black);
+  --border-mid: 2.5px solid var(--black);
+  --border-thin: 1.5px solid var(--black);
+  
+  --shadow-sm: 3px 3px 0px var(--black);
+  --shadow-md: 6px 6px 0px var(--black);
+  --shadow-lg: 10px 10px 0px var(--black);
+  --shadow-xl: 14px 14px 0px var(--black);
+
+  --font-display: 'Archivo Black', 'Syne', sans-serif;
+  --font-sub: 'Syne', sans-serif;
+  --font-body: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --font-hand: 'Permanent Marker', cursive;
+}
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--cream);
+  color: var(--black);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  background-color: var(--cream);
+  background-image: radial-gradient(var(--cream-dark) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+/* ==========================================================================
+   STICKY HUD / TOP BAR
+   ========================================================================== */
+.hud-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--yellow);
+  border-bottom: var(--border-thick);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-shadow: 0 4px 0 var(--black);
+}
+
+.hud-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hud-badge {
+  background: var(--black);
+  color: var(--yellow);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border: var(--border-thin);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #00FF66;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse-glow 1.5s infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+.hud-id {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.8rem;
+  background: var(--white);
+  padding: 3px 8px;
+  border: var(--border-thin);
+  box-shadow: 2px 2px 0 var(--black);
+}
+
+.hud-tag {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.75rem;
+  background: var(--saffron);
+  color: var(--black);
+  padding: 3px 8px;
+  border: var(--border-thin);
+}
+
+.hud-center {
+  display: flex;
+  align-items: center;
+}
+
+.altitude-meter {
+  background: var(--black);
+  color: var(--white);
+  padding: 6px 14px;
+  border: var(--border-thin);
+  box-shadow: 3px 3px 0 var(--black);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.alt-label {
+  color: var(--yellow);
+  font-weight: 700;
+}
+
+.alt-val {
+  color: #00FFCC;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.alt-loc {
+  color: #bbb;
+  font-size: 0.75rem;
+}
+
+.hud-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hud-btn {
+  background: var(--white);
+  border: var(--border-mid);
+  padding: 5px 12px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.1s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hud-btn:hover {
+  background: var(--cream);
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--black);
+}
+
+.hud-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--black);
+}
+
+.salute-counter-hud {
+  background: var(--saffron);
+  color: var(--black);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 5px 12px;
+  border: var(--border-mid);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Scroll Progress Bar */
+.scroll-progress-track {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: rgba(0,0,0,0.3);
+}
+
+.scroll-progress-fill {
+  width: 0%;
+  height: 100%;
+  background: var(--danger-red);
+  transition: width 0.05s linear;
+}
+
+/* ==========================================================================
+   MARQUEE TICKER
+   ========================================================================== */
+.brutal-ticker {
+  background: var(--black);
+  color: var(--yellow);
+  border-bottom: var(--border-thick);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 8px 0;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ticker-inner {
+  display: inline-block;
+  white-space: nowrap;
+  animation: ticker-slide 35s linear infinite;
+}
+
+.ticker-inner span {
+  padding-right: 40px;
+}
+
+@keyframes ticker-slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ==========================================================================
+   COMMON NEO-BRUTALIST ATOMS
+   ========================================================================== */
+.brutal-box {
+  border: var(--border-thick);
+  box-shadow: var(--shadow-md);
+}
+
+.brutal-card {
+  background: var(--card-bg);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-md);
+  padding: 18px;
+  position: relative;
+  transition: transform 0.2s cubic-bezier(0.2, 0.9, 0.3, 1), box-shadow 0.2s ease;
+}
+
+.brutal-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Buttons */
+.brutal-btn {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  padding: 12px 24px;
+  border: var(--border-thick);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.12s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--black);
+}
+
+.brutal-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.brutal-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 var(--black);
+}
+
+.btn-saffron {
+  background: var(--saffron);
+  color: var(--black);
+}
+
+.btn-saffron:hover {
+  background: #ff7733;
+}
+
+.btn-yellow {
+  background: var(--yellow);
+  color: var(--black);
+}
+
+.btn-white {
+  background: var(--white);
+  color: var(--black);
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.8rem;
+}
+
+/* Rotations for raw scrapbook vibe */
+.rot-neg-1 { transform: rotate(-1.2deg); }
+.rot-pos-1 { transform: rotate(1.2deg); }
+.rot-neg-2 { transform: rotate(-2deg); }
+.rot-pos-2 { transform: rotate(2deg); }
+
+/* Tape Effects */
+.tape-corner-tl {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  width: 70px;
+  height: 24px;
+  background: rgba(255, 232, 0, 0.85);
+  border: 1.5px solid rgba(0,0,0,0.6);
+  transform: rotate(-35deg);
+  z-index: 10;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+}
+
+.tape-corner-tr {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 70px;
+  height: 24px;
+  background: rgba(255, 232, 0, 0.85);
+  border: 1.5px solid rgba(0,0,0,0.6);
+  transform: rotate(35deg);
+  z-index: 10;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+}
+
+.tape-strip-top {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1deg);
+  width: 100px;
+  height: 26px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1.5px solid rgba(0,0,0,0.7);
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+/* Color utility classes */
+.bg-yellow { background: var(--yellow) !important; color: var(--black); }
+.bg-saffron { background: var(--saffron) !important; color: var(--black); }
+.bg-saffron-light { background: var(--saffron-light) !important; }
+.bg-black { background: var(--black) !important; color: var(--white); }
+.bg-red { background: var(--danger-red) !important; color: var(--white); }
+.bg-green { background: var(--tiranga-green) !important; color: var(--white); }
+.bg-cream { background: var(--cream) !important; }
+.bg-white { background: var(--white) !important; }
+.text-white { color: var(--white) !important; }
+.text-black { color: var(--black) !important; }
+
+/* Badges */
+.card-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.72rem;
+  padding: 4px 10px;
+  border: var(--border-mid);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  box-shadow: 2px 2px 0 var(--black);
+}
+
+/* Stamps */
+.stamp-classified {
+  display: inline-block;
+  border: 3px dashed var(--danger-red);
+  color: var(--danger-red);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  transform: rotate(-2deg);
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+
+.stamp-sacrifice {
+  display: inline-block;
+  border: 3px solid var(--danger-red);
+  background: var(--danger-red);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  padding: 4px 12px;
+  transform: rotate(2deg);
+  margin-bottom: 16px;
+  box-shadow: 3px 3px 0 var(--black);
+}
+
+/* Chapter Transition Strip */
+.chapter-strip {
+  margin: 60px 0 30px;
+  background: var(--black);
+  color: var(--white);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-md);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.strip-num {
+  font-family: var(--font-mono);
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border: var(--border-thin);
+}
+
+.strip-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  flex: 1;
+}
+
+.strip-alt {
+  font-family: var(--font-mono);
+  color: #00FFCC;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   LAYOUT STRUCTURE
+   ========================================================================== */
+.story-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 30px 20px 80px;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.grid-2-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.grid-3-col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero-section {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.hero-header-box {
+  background: var(--white);
+  padding: 30px 36px;
+  margin-bottom: 30px;
+  border: var(--border-thick);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.hero-date {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: #555;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -1px;
+  color: var(--black);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.hero-subhead {
+  font-family: var(--font-hand);
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  color: var(--saffron);
+  text-shadow: 2px 2px 0 var(--black);
+  margin-bottom: 20px;
+  transform: rotate(-1deg);
+  display: inline-block;
+}
+
+.hero-subtitle-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding-top: 14px;
+  border-top: var(--border-mid);
+}
+
+.badge-black {
+  background: var(--black);
+  color: var(--white);
+  padding: 3px 10px;
+  font-size: 0.8rem;
+}
+
+.badge-saffron {
+  background: var(--saffron);
+  color: var(--black);
+  padding: 3px 10px;
+  font-size: 0.8rem;
+  border: var(--border-thin);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+/* Hero Quote & Crest */
+.hero-quote-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: var(--white);
+}
+
+.crest-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: var(--border-mid);
+}
+
+.crest-img {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+  border: var(--border-mid);
+  background: #fdfdfd;
+  padding: 4px;
+  box-shadow: 2px 2px 0 var(--black);
+}
+
+.crest-details {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-mono);
+}
+
+.crest-details strong {
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+}
+
+.crest-details span {
+  font-size: 0.82rem;
+  color: #333;
+}
+
+.crest-details .motto {
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--army-green);
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.quote-container {
+  padding: 24px;
+  position: relative;
+}
+
+.marker-quote {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--danger-red);
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.handwritten-quote {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.35rem;
+  line-height: 1.35;
+  color: var(--black);
+  margin-bottom: 14px;
+}
+
+.quote-author {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: #555;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ==========================================================================
+   IMAGE CARDS & INSPECTION
+   ========================================================================== */
+.photo-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.img-wrapper {
+  position: relative;
+  overflow: hidden;
+  border: var(--border-thick);
+  background: var(--black);
+  aspect-ratio: 4 / 3;
+}
+
+.img-wrapper.large-bleed {
+  aspect-ratio: 16 / 9;
+  max-height: 520px;
+}
+
+.story-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+  filter: contrast(1.08) brightness(0.98);
+}
+
+.photo-card:hover .story-img {
+  transform: scale(1.03);
+}
+
+.expand-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: var(--yellow);
+  color: var(--black);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 6px 12px;
+  border: var(--border-mid);
+  box-shadow: 2px 2px 0 var(--black);
+  cursor: pointer;
+  opacity: 0.95;
+  transition: all 0.1s ease;
+}
+
+.expand-btn:hover {
+  background: var(--white);
+  transform: scale(1.05);
+}
+
+.photo-caption-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 8px 4px 4px;
+  color: #444;
+  border-bottom: 1.5px dashed #aaa;
+}
+
+.micro-caption {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-top: 8px;
+  color: var(--black);
+}
+
+/* Telegram Note */
+.field-telegram {
+  margin-top: 24px;
+  padding: 20px 24px;
+  border: var(--border-thick);
+}
+
+.telegram-header {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+  border-bottom: var(--border-thin);
+  padding-bottom: 4px;
+}
+
+.telegram-body {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--black);
+}
+
+/* Full Bleed Card */
+.full-bleed-card {
+  padding: 22px;
+}
+
+.mini-combat-log {
+  margin-top: 14px;
+  background: var(--cream);
+  padding: 14px 18px;
+  border: var(--border-mid);
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+}
+
+.log-time {
+  display: block;
+  font-weight: 700;
+  color: var(--danger-red);
+  margin-bottom: 4px;
+}
+
+/* ==========================================================================
+   ACT 4: RADIO TRANSMISSION BOX
+   ========================================================================== */
+.radio-box {
+  margin-top: 28px;
+  padding: 26px 30px;
+  border: var(--border-thick);
+  background: var(--white);
+  box-shadow: var(--shadow-lg);
+}
+
+.radio-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: #333;
+  padding-bottom: 12px;
+  border-bottom: var(--border-mid);
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--danger-red);
+  border-radius: 50%;
+  animation: pulse-glow 1s infinite;
+}
+
+.timestamp {
+  margin-left: auto;
+  color: #777;
+}
+
+.callsign {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--black);
+  margin: 16px 0 8px;
+}
+
+.radio-shout {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  color: var(--saffron);
+  text-shadow: 3px 3px 0 var(--black);
+  letter-spacing: -1px;
+  line-height: 1;
+  margin: 10px 0 16px;
+}
+
+.radio-desc {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #222;
+  margin-bottom: 18px;
+}
+
+.intercept-box {
+  background: var(--yellow);
+  padding: 12px 18px;
+  border: var(--border-mid);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.intercept-tag {
+  background: var(--black);
+  color: var(--yellow);
+  padding: 2px 8px;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   ACT 5: SACRIFICE
+   ========================================================================== */
+.sacrifice-card {
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sacrifice-heading {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  color: var(--black);
+}
+
+.sacrifice-text {
+  font-size: 1.02rem;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.brutal-callout {
+  padding: 14px 18px;
+  border: var(--border-mid);
+  box-shadow: 3px 3px 0 var(--black);
+  margin: 12px 0 16px;
+}
+
+.dialogue {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 1.2rem;
+  line-height: 1.35;
+  color: var(--black);
+}
+
+.final-words {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--danger-red);
+}
+
+/* ==========================================================================
+   ACT 6: PARAM VIR CHAKRA & DIMPLE
+   ========================================================================== */
+.pvc-detail-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: var(--white);
+  padding: 24px;
+}
+
+.pvc-medal-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: var(--border-mid);
+}
+
+.pvc-img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.5));
+}
+
+.pvc-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--saffron);
+}
+
+.pvc-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--black);
+  margin: 4px 0;
+}
+
+.pvc-motto {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: #666;
+}
+
+.dimple-memorial {
+  padding: 18px;
+  background: var(--cream);
+}
+
+.dimple-badge {
+  display: inline-block;
+  background: var(--danger-red);
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  margin-bottom: 10px;
+}
+
+.dimple-text {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  margin-bottom: 10px;
+}
+
+.dimple-quote {
+  font-family: var(--font-mono);
+  font-style: italic;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: #444;
+  border-left: 3px solid var(--black);
+  padding-left: 10px;
+}
+
+/* ==========================================================================
+   ACT 7: MEMORIAL EPITAPH
+   ========================================================================== */
+.epitaph-stone {
+  margin-top: 30px;
+  background: var(--black);
+  color: var(--white);
+  padding: 30px;
+  text-align: center;
+}
+
+.stone-border {
+  border: 2px solid #555;
+  padding: 24px;
+}
+
+.epitaph-words {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3.5vw, 2.4rem);
+  line-height: 1.35;
+  letter-spacing: 1px;
+  color: var(--yellow);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.stone-credit {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: #aaa;
+  letter-spacing: 2px;
+}
+
+/* ==========================================================================
+   INTERACTIVE MEMORIAL TRIBUTE
+   ========================================================================== */
+.tribute-box {
+  padding: 40px 30px;
+  text-align: center;
+  position: relative;
+  border: var(--border-thick);
+  box-shadow: var(--shadow-lg);
+}
+
+.tribute-badge {
+  display: inline-block;
+  background: var(--black);
+  color: var(--yellow);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  margin-bottom: 12px;
+  border: var(--border-thin);
+}
+
+.tribute-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.tribute-sub {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: #333;
+  max-width: 650px;
+  margin: 0 auto 24px;
+}
+
+.salute-counter-large {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  line-height: 1;
+  color: var(--danger-red);
+  text-shadow: 4px 4px 0 var(--black);
+  margin-bottom: 4px;
+}
+
+.salute-label {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+.tribute-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.salute-btn-huge {
+  font-size: 1.15rem;
+  padding: 16px 36px;
+}
+
+.salute-toast {
+  margin-top: 20px;
+  background: var(--black);
+  color: #00FF66;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 12px 20px;
+  border: var(--border-mid);
+  box-shadow: var(--shadow-sm);
+  display: inline-block;
+  animation: bounce-in 0.3s ease;
+}
+
+.diya-display {
+  margin-top: 20px;
+  background: var(--white);
+  padding: 16px 24px;
+  border: var(--border-mid);
+  box-shadow: var(--shadow-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.flame-symbol {
+  font-size: 2rem;
+  animation: flicker 1s infinite alternate;
+}
+
+@keyframes flicker {
+  0% { transform: scale(1) rotate(-2deg); }
+  100% { transform: scale(1.15) rotate(2deg); }
+}
+
+.flame-text {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--army-green);
+}
+
+@keyframes bounce-in {
+  0% { transform: scale(0.8); opacity: 0; }
+  60% { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ==========================================================================
+   ARCHIVAL PHOTO REPOSITORY / GALLERY
+   ========================================================================== */
+.gallery-header {
+  padding: 20px 24px;
+  margin-bottom: 24px;
+}
+
+.gallery-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.gallery-desc {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.gallery-thumb-card {
+  background: var(--white);
+  border: var(--border-mid);
+  box-shadow: var(--shadow-sm);
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-thumb-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--saffron);
+}
+
+.gallery-thumb-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: var(--border-thin);
+  display: block;
+}
+
+.gallery-thumb-title {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.82rem;
+  margin-top: 8px;
+  color: var(--black);
+}
+
+.gallery-thumb-id {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: #666;
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   FOOTER (HUMAN CRAFTED FEEL)
+   ========================================================================== */
+.story-footer {
+  margin-top: 60px;
+  padding: 40px 30px 20px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 1fr;
+  gap: 30px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #333;
+}
+
+.footer-badge {
+  display: inline-block;
+  background: var(--tiranga-green);
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.72rem;
+  padding: 3px 8px;
+  margin-bottom: 12px;
+}
+
+.footer-h {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.footer-p {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #bbb;
+  margin-bottom: 8px;
+}
+
+.footer-motto {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--yellow);
+  margin-bottom: 16px;
+  line-height: 1.35;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* ==========================================================================
+   LIGHTBOX MODAL
+   ========================================================================== */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.image-modal.hidden {
+  display: none;
+}
+
+.modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+}
+
+.modal-dialog {
+  position: relative;
+  z-index: 10;
+  background: var(--white);
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-xl);
+}
+
+.modal-header {
+  background: var(--black);
+  color: var(--yellow);
+  padding: 12px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: var(--border-mid);
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.modal-close-btn {
+  background: var(--danger-red);
+  color: var(--white);
+  border: var(--border-thin);
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.75rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 var(--white);
+}
+
+.modal-close-btn:hover {
+  background: #ff1a3c;
+}
+
+.modal-img-container {
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  max-height: 65vh;
+}
+
+.modal-img-container img {
+  max-width: 100%;
+  max-height: 65vh;
+  object-fit: contain;
+  display: block;
+}
+
+.modal-footer {
+  padding: 14px 18px;
+  background: var(--cream);
+  border-top: var(--border-mid);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.modal-caption {
+  font-weight: 700;
+  color: var(--black);
+}
+
+.modal-stamp {
+  font-size: 0.72rem;
+  background: var(--black);
+  color: var(--white);
+  padding: 2px 8px;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   UTILITY & RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .grid-2-col {
+    grid-template-columns: 1fr;
+  }
+  .grid-3-col {
+    grid-template-columns: 1fr;
+  }
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+  .hud-tag {
+    display: none;
+  }
+  .chapter-strip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .hud-bar {
+    padding: 8px 12px;
+  }
+  .hud-id {
+    display: none;
+  }
+  .altitude-meter {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+  .salute-counter-hud {
+    display: none;
+  }
+  .hero-header-box {
+    padding: 20px 16px;
+  }
+  .tribute-box {
+    padding: 24px 16px;
+  }
+  .tribute-actions {
+    flex-direction: column;
+  }
+}

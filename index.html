@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHERSHAAH OF KARGIL // Capt. Vikram Batra PVC (1999)</title>
+  
+  <!-- Neo-Brutalist Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Permanent+Marker&family=Space+Grotesk:wght@500;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- TOP HUD / MISSION STATUS BAR -->
+  <header class="hud-bar">
+    <div class="hud-left">
+      <div class="hud-badge pulse-dot">
+        <span class="dot"></span> LIVE ARCHIVE
+      </div>
+      <div class="hud-id">FILE // OP-VIJAY-1999</div>
+      <div class="hud-tag">13 JAK RIF</div>
+    </div>
+
+    <div class="hud-center">
+      <div class="altitude-meter">
+        <span class="alt-label">ALTITUDE:</span>
+        <span id="altValue" class="alt-val">10,800 FT</span>
+        <span class="alt-loc" id="altLoc">(BASE: DRAS)</span>
+      </div>
+    </div>
+
+    <div class="hud-right">
+      <a href="kargil-story.zip" download="kargil-story.zip" class="hud-btn bg-white text-black" title="Download ZIP with all HTML, CSS, JS & Images" style="text-decoration:none;">
+        <span class="btn-icon">💾</span> <span>DOWNLOAD ZIP</span>
+      </a>
+      <button id="audioToggleBtn" class="hud-btn" title="Toggle Radio Ambient Sound">
+        <span class="btn-icon">📻</span> <span id="audioStatusText">RADIO: OFF</span>
+      </button>
+      <div class="salute-counter-hud" id="hudSaluteDisplay">
+        <span class="flag-icon">🇮🇳</span> <span id="hudSaluteCount">14,892</span> SALUTES
+      </div>
+    </div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-track">
+      <div id="scrollProgressBar" class="scroll-progress-fill"></div>
+    </div>
+  </header>
+
+  <!-- MARQUEE TICKER 1 -->
+  <div class="brutal-ticker">
+    <div class="ticker-inner">
+      <span>★ OPERATION VIJAY 1999 ★ CAPT. VIKRAM BATRA (PARAM VIR CHAKRA) ★ "YEH DIL MAANGE MORE!" ★ POINT 5140 ★ POINT 4875 // BATRA TOP ★ 13 JAMMU & KASHMIR RIFLES ★ JAI MATA DI ★ TIGER HILL ★ TOLOLING ★ TRIBUTE TO 527 MARTYRS ★</span>
+      <span>★ OPERATION VIJAY 1999 ★ CAPT. VIKRAM BATRA (PARAM VIR CHAKRA) ★ "YEH DIL MAANGE MORE!" ★ POINT 5140 ★ POINT 4875 // BATRA TOP ★ 13 JAMMU & KASHMIR RIFLES ★ JAI MATA DI ★ TIGER HILL ★ TOLOLING ★ TRIBUTE TO 527 MARTYRS ★</span>
+    </div>
+  </div>
+
+  <main class="story-container">
+
+    <!-- HERO SECTION: THE TITLE & THE HERO -->
+    <section class="section hero-section" id="hero">
+      <div class="hero-header-box brutal-box">
+        <div class="stamp-classified">DECLASSIFIED MILITARY DOSSIER</div>
+        <div class="hero-date">SUMMER 1999 // KARGIL, JAMMU & KASHMIR</div>
+        <h1 class="hero-title">SHERSHAAH</h1>
+        <div class="hero-subhead">"YEH DIL MAANGE MORE!"</div>
+        <div class="hero-subtitle-bar">
+          <span>THE TRUE STORY OF CAPTAIN VIKRAM BATRA, PVC</span>
+          <span class="badge-black">13 JAK RIF</span>
+          <span class="badge-saffron">PARAM VIR CHAKRA</span>
+        </div>
+      </div>
+
+      <!-- MAIN HERO IMAGE COLLAGE -->
+      <div class="hero-grid">
+        <!-- Candid Photo Card -->
+        <div class="photo-card brutal-card rot-neg-1" data-caption="Capt. Vikram Batra in combat uniform in the Dras valley, June 1999. Codename: SHER SHAH.">
+          <div class="tape-corner-tl"></div>
+          <div class="tape-corner-tr"></div>
+          <div class="card-badge bg-yellow">IMAGE #01 // FILE PHOTO</div>
+          <div class="img-wrapper">
+            <img src="images/batra_candid.jpg" alt="Captain Vikram Batra in Kargil" class="story-img">
+            <button class="expand-btn" data-img="images/batra_candid.jpg" data-title="Captain Vikram Batra (13 JAK RIF) in Kargil, 1999">🔍 INSPECT</button>
+          </div>
+          <div class="photo-caption-bar">
+            <span class="coord-tag">LOC: DRAS VALLEY</span>
+            <span class="date-tag">JUNE 1999</span>
+          </div>
+          <p class="micro-caption">Capt. Vikram Batra. 24 years old. Smiling in the face of impossible odds.</p>
+        </div>
+
+        <!-- The Promise Card & Regiment Badge -->
+        <div class="hero-quote-card brutal-card rot-pos-1">
+          <div class="crest-box">
+            <img src="images/regiment_crest.svg" alt="Jammu & Kashmir Rifles Crest" class="crest-img">
+            <div class="crest-details">
+              <strong>13TH BATTALION</strong>
+              <span>JAMMU & KASHMIR RIFLES</span>
+              <span class="motto">"Prahari Baan Pratidinam"</span>
+            </div>
+          </div>
+
+          <div class="quote-container brutal-box bg-cream">
+            <span class="marker-quote">THE SACRED PROMISE:</span>
+            <blockquote class="handwritten-quote">
+              "Either I will come back after hoisting the Tricolour, or I will come back wrapped in it. But I will be back for sure."
+            </blockquote>
+            <div class="quote-author">— Vikram's words to his best friend in Palampur before leaving for the front lines.</div>
+          </div>
+
+          <div class="hero-cta-group">
+            <button class="brutal-btn btn-saffron salute-trigger-btn">
+              <span class="btn-icon">🇮🇳</span> SALUTE THE SHERSHAAH
+            </button>
+            <a href="kargil-story.zip" download="kargil-story.zip" class="brutal-btn btn-yellow">
+              <span class="btn-icon">💾</span> DOWNLOAD COMPLETE .ZIP
+            </a>
+            <a href="#act1" class="brutal-btn btn-white">
+              START VISUAL SCROLL ↓
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION DIVIDER -->
+    <div class="chapter-strip" id="act1">
+      <div class="strip-num">CHAPTER 01</div>
+      <div class="strip-title">THE FORTRESS IN THE CLOUDS // 17,000 FEET</div>
+      <div class="strip-alt">ELEVATION: 12,000 FT</div>
+    </div>
+
+    <!-- ACT 1: THE MOUNTAIN WALLS -->
+    <section class="section mountain-section">
+      <div class="grid-2-col">
+        <!-- Photo 2: Kargil Peaks -->
+        <div class="photo-card brutal-card rot-pos-1" data-caption="Tololing and Dras mountain ranges. Sheer cliffs where enemy sat at high vantage points.">
+          <div class="tape-strip-top"></div>
+          <div class="card-badge bg-red">BATTLEFIELD TERRAIN</div>
+          <div class="img-wrapper">
+            <img src="images/kargil_peaks.jpg" alt="Tololing and Dras Mountain Ranges" class="story-img">
+            <button class="expand-btn" data-img="images/kargil_peaks.jpg" data-title="Tololing and Dras Range // The Vertical Battleground">🔍 INSPECT</button>
+          </div>
+          <div class="photo-caption-bar">
+            <span>DRAS-TOLOLING RIDGE</span>
+            <span>ALT: 15,200 FT</span>
+          </div>
+          <p class="micro-caption">Sheer vertical rock walls. Zero cover. Temperature: -10°C.</p>
+        </div>
+
+        <!-- Photo 3: Tiger Hill -->
+        <div class="photo-card brutal-card rot-neg-1" data-caption="The imposing Tiger Hill peak (17,414 ft), looming over the National Highway 1D.">
+          <div class="tape-strip-top"></div>
+          <div class="card-badge bg-black text-white">THE IMPOSSIBLE TARGET</div>
+          <div class="img-wrapper">
+            <img src="images/tiger_hill.jpg" alt="Tiger Hill Kargil Peak" class="story-img">
+            <button class="expand-btn" data-img="images/tiger_hill.jpg" data-title="Tiger Hill (17,414 ft) Looming Over Dras">🔍 INSPECT</button>
+          </div>
+          <div class="photo-caption-bar">
+            <span>TIGER HILL SECTOR</span>
+            <span>ALT: 17,414 FT</span>
+          </div>
+          <p class="micro-caption">Pakistani snipers and machine guns pinned down every single Indian troop movement from this icy fortress.</p>
+        </div>
+      </div>
+
+      <!-- Raw Field Note -->
+      <div class="field-telegram brutal-box bg-yellow">
+        <div class="telegram-header">
+          <span>TELEGRAM // URGENT DISPATCH</span>
+          <span>DATE: MAY 1999</span>
+        </div>
+        <p class="telegram-body">
+          "The enemy held the peaks with direct line of sight to NH-1A. Our jawans had to climb 80-degree near-vertical cliffs at night in pitch blackness, carrying 25 kg rucksacks under direct machine gun fire. Every foot of ground was paid for in blood."
+        </p>
+      </div>
+    </section>
+
+    <!-- CHAPTER 02 -->
+    <div class="chapter-strip" id="act2">
+      <div class="strip-num">CHAPTER 02</div>
+      <div class="strip-title">THE FIRE FROM BELOW // 250,000 SHELLS</div>
+      <div class="strip-alt">ELEVATION: 13,800 FT</div>
+    </div>
+
+    <!-- ACT 2: BOFORS & THE BOMBARDMENT -->
+    <section class="section artillery-section">
+      <div class="grid-2-col">
+        <!-- Photo 4: Bofors Gun -->
+        <div class="photo-card brutal-card rot-neg-2" data-caption="Indian Army 155mm Bofors howitzer firing direct into Pakistani bunkers on jagged ridgelines.">
+          <div class="tape-corner-tr"></div>
+          <div class="card-badge bg-saffron">HEAVY ARTILLERY</div>
+          <div class="img-wrapper">
+            <img src="images/artillery_bofors.jpg" alt="Bofors Gun Firing in Kargil War" class="story-img">
+            <button class="expand-btn" data-img="images/artillery_bofors.jpg" data-title="155mm Bofors Howitzers Firing Direct-Sights into Peaks">🔍 INSPECT</button>
+          </div>
+          <div class="photo-caption-bar">
+            <span>BOFORS 155MM HOWITZER</span>
+            <span>DAY & NIGHT BARRAGE</span>
+          </div>
+          <p class="micro-caption">Guns barrel-elevated to 70 degrees. Direct firing against sheer mountain bunkers.</p>
+        </div>
+
+        <!-- Photo 5: War Smoke -->
+        <div class="photo-card brutal-card rot-pos-2" data-caption="Smoke rising from bombarded enemy positions across the high Himalayan ridgelines.">
+          <div class="tape-corner-tl"></div>
+          <div class="card-badge bg-black text-white">THE THUNDER</div>
+          <div class="img-wrapper">
+            <img src="images/kargil_war_smoke.jpg" alt="Kargil Battlefield Smoke" class="story-img">
+            <button class="expand-btn" data-img="images/kargil_war_smoke.jpg" data-title="Artillery Smoke and Shelling Across Kargil Heights">🔍 INSPECT</button>
+          </div>
+          <div class="photo-caption-bar">
+            <span>LINE OF CONTROL</span>
+            <span>BATTLE IN THE CLOUDS</span>
+          </div>
+          <p class="micro-caption">The mountains shook like earthquakes. 250,000 artillery shells pulverizing fortified stone bunkers.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 03 -->
+    <div class="chapter-strip" id="act3">
+      <div class="strip-num">CHAPTER 03</div>
+      <div class="strip-title">THE RAZOR'S RIDGE // THE NIGHT ASSAULT</div>
+      <div class="strip-alt">ELEVATION: 15,500 FT</div>
+    </div>
+
+    <!-- ACT 3: KNIFE RIDGES -->
+    <section class="section ridge-section">
+      <div class="full-bleed-card brutal-card">
+        <div class="card-badge bg-yellow">COMBAT ON KNIFE-EDGE</div>
+        <div class="img-wrapper large-bleed">
+          <img src="images/patrol_ridge.jpg" alt="Indian Soldiers on Kargil Knife Edge Ridge" class="story-img">
+          <button class="expand-btn" data-img="images/patrol_ridge.jpg" data-title="Indian Troops Navigating Razor Knife Ridges at 15,500 FT">🔍 INSPECT</button>
+        </div>
+        <div class="photo-caption-bar">
+          <span>SURGICAL PATROL // 13 JAK RIF</span>
+          <span>VERTICAL CLIFF CLIMB</span>
+        </div>
+        <div class="mini-combat-log">
+          <div class="log-entry">
+            <span class="log-time">20 JUNE 1999 // 0100 HRS:</span>
+            <p>Capt. Vikram Batra opted to climb the sheer eastern cliff face that the enemy thought was impassable. He and his men climbed hand-over-hand in pitch darkness, completely bypassing enemy machine gun cones.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 04 -->
+    <div class="chapter-strip" id="act4">
+      <div class="strip-num">CHAPTER 04</div>
+      <div class="strip-title">POINT 5140 RECAPTURED // "YEH DIL MAANGE MORE!"</div>
+      <div class="strip-alt">ELEVATION: 16,960 FT</div>
+    </div>
+
+    <!-- ACT 4: POINT 5140 & CAPTURED BUNKERS -->
+    <section class="section victory-section">
+      <div class="grid-2-col">
+        <!-- Photo 6: Batra Profile -->
+        <div class="photo-card brutal-card rot-neg-1" data-caption="Official military portrait of Captain Vikram Batra, 13 Jammu and Kashmir Rifles.">
+          <div class="tape-strip-top"></div>
+          <div class="card-badge bg-saffron">THE HERO OF 5140</div>
+          <div class="img-wrapper">
+            <img src="images/batra_portrait.jpg" alt="Captain Vikram Batra Portrait" class="story-img">
+            <button class="expand-btn" data-img="images/batra_portrait.jpg" data-title="Official Portrait // Captain Vikram Batra, 13 JAK RIF">🔍 INSPECT</button>
+          </div>
+          <div class="photo-caption-bar">
+            <span>CAPT. VIKRAM BATRA</span>
+            <span>CODENAME: SHER SHAH</span>
+          </div>
+          <p class="micro-caption">At 0330 hrs on 20 June 1999, Batra stormed the top bunker with hand grenades and cleared it single-handedly.</p>
+        </div>
+
+        <!-- Photo 7: Captured Weapons -->
+        <div class="photo-card brutal-card rot-pos-1" data-caption="Pakistani weapons and ammunition captured by 13 JAK RIF at Point 5140.">
+          <div class="tape-strip-top"></div>
+          <div class="card-badge bg-black text-white">OVERRUN POSITION</div>
+          <div class="img-wrapper">
+            <img src="images/captured_weapons.jpg" alt="Captured Pakistani weapons at Kargil" class="story-img">
+            <button class="expand-btn" data-img="images/captured_weapons.jpg" data-title="Weapons and Heavy Machine Guns Captured by 13 JAK RIF">🔍 INSPECT</button>
+          </div>
+          <div class="photo-caption-bar">
+            <span>PT 5140 SUMMIT</span>
+            <span>ENEMY RETREAT CONFIRMED</span>
+          </div>
+          <p class="micro-caption">Heavy machine guns, rocket launchers, and sniper rifles captured. Zero casualties in Batra's company.</p>
+        </div>
+      </div>
+
+      <!-- THE RADIO MESSAGE BOX -->
+      <div class="radio-box brutal-box bg-white">
+        <div class="radio-header">
+          <span class="status-dot"></span> RADIO TRANSMISSION // SECURE CHANNEL 04
+          <span class="timestamp">20 JUNE 1999 // 0330 HRS</span>
+        </div>
+        <div class="radio-body">
+          <div class="callsign">CALLSIGN [SHER SHAH] ➔ COMMAND BASE [13 JAK RIF]:</div>
+          <div class="radio-shout">"YEH DIL MAANGE MORE!"</div>
+          <div class="radio-desc">
+            With these words sent over the military wireless, Captain Vikram Batra reported the recapture of Point 5140. It became the battle cry that inspired 1 billion Indians overnight.
+          </div>
+        </div>
+        <div class="intercept-box">
+          <span class="intercept-tag">ENEMY RADIO INTERCEPT:</span>
+          <em>"Sher Shah has arrived. Do not engage him in open fight. Move away."</em>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 05 -->
+    <div class="chapter-strip" id="act5">
+      <div class="strip-num">CHAPTER 05</div>
+      <div class="strip-title">POINT 4875 // THE ULTIMATE SACRIFICE</div>
+      <div class="strip-alt">ELEVATION: 16,000 FT</div>
+    </div>
+
+    <!-- ACT 5: BATRA TOP & THE SUPREME ACT -->
+    <section class="section sacrifice-section">
+      <div class="grid-2-col">
+        <!-- Photo 8: Batra Statue at War Memorial -->
+        <div class="photo-card brutal-card rot-pos-1" data-caption="Bronze statue of Captain Vikram Batra at Param Yodha Sthal, National War Memorial, New Delhi.">
+          <div class="tape-corner-tr"></div>
+          <div class="card-badge bg-red">PARAM YODHA STHAL</div>
+          <div class="img-wrapper">
+            <img src="images/batra_statue.jpg" alt="Captain Vikram Batra Statue at National War Memorial" class="story-img">
+            <button class="expand-btn" data-img="images/batra_statue.jpg" data-title="Captain Vikram Batra Statue // Param Yodha Sthal, New Delhi">🔍 INSPECT</button>
+          </div>
+          <div class="photo-caption-bar">
+            <span>MEMORIAL STATUE</span>
+            <span>NEW DELHI</span>
+          </div>
+          <p class="micro-caption">Sculpted in bronze: charging forward, rifle raised, fear banished forever.</p>
+        </div>
+
+        <!-- The Emotional Narrative Card -->
+        <div class="sacrifice-card brutal-card rot-neg-1 bg-cream">
+          <div class="tape-corner-tl"></div>
+          <div class="stamp-sacrifice">07 JULY 1999</div>
+          
+          <h3 class="sacrifice-heading">"TU PEECHE HAT, TERE BIWI-BACCHE HAIN..."</h3>
+          
+          <p class="sacrifice-text">
+            During the ferocious hand-to-hand battle for Point 4875, Vikram’s junior officer, <strong>Lt. Naveen Anjum</strong>, was hit in both legs by machine-gun fire and lay bleeding in the open.
+          </p>
+          <p class="sacrifice-text">
+            Batra rushed out into the crossfire to pull Naveen into cover. When Naveen protested, Batra gently pushed him back and whispered:
+          </p>
+
+          <div class="brutal-callout bg-yellow">
+            <p class="dialogue">"Tu peeche hat, tere biwi-bacche hain... I don't even have a family yet."</p>
+          </div>
+
+          <p class="sacrifice-text">
+            Moments after dragging Naveen to safety, a sniper bullet pierced Vikram’s chest, followed by a splinter from an RPG.
+          </p>
+          <p class="sacrifice-text final-words">
+            He fell facing the enemy. His last breath: <strong>"JAI MATA DI!"</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 06 -->
+    <div class="chapter-strip" id="act6">
+      <div class="strip-num">CHAPTER 06</div>
+      <div class="strip-title">THE PROMISE KEPT // WRAPPED IN THE TRICOLOUR</div>
+      <div class="strip-alt">26 JANUARY 2000</div>
+    </div>
+
+    <!-- ACT 6: PARAM VIR CHAKRA & DIMPLE CHEEMA -->
+    <section class="section medal-section">
+      <div class="grid-2-col">
+        <!-- Photo 9: PVC Ceremony to Father -->
+        <div class="photo-card brutal-card rot-neg-1" data-caption="President K. R. Narayanan presenting the Param Vir Chakra posthumously to Captain Vikram Batra's father, Mr. G. L. Batra.">
+          <div class="tape-strip-top"></div>
+          <div class="card-badge bg-black text-white">RASHTRAPATI BHAVAN</div>
+          <div class="img-wrapper">
+            <img src="images/pvc_award_father.jpg" alt="President presenting Param Vir Chakra to Vikram Batra's father" class="story-img">
+            <button class="expand-btn" data-img="images/pvc_award_father.jpg" data-title="President K.R. Narayanan presenting PVC to Father G.L. Batra">🔍 INSPECT</button>
+          </div>
+          <div class="photo-caption-bar">
+            <span>26 JANUARY 2000</span>
+            <span>POSTHUMOUS CITATION</span>
+          </div>
+          <p class="micro-caption">A grieving yet proud father receiving India's highest wartime gallantry medal.</p>
+        </div>
+
+        <!-- Photo 10: Param Vir Chakra Medal & Love Story -->
+        <div class="pvc-detail-card brutal-card rot-pos-1">
+          <div class="pvc-medal-wrapper">
+            <img src="images/param_vir_chakra.png" alt="Param Vir Chakra Medal" class="pvc-img">
+            <div class="pvc-title-box">
+              <span class="pvc-tag">HIGHEST MILITARY HONOUR</span>
+              <h3 class="pvc-name">PARAM VIR CHAKRA</h3>
+              <span class="pvc-motto">"Wheel of the Ultimate Brave"</span>
+            </div>
+          </div>
+
+          <div class="dimple-memorial brutal-box bg-white">
+            <div class="dimple-badge">ETERNAL LOVE</div>
+            <p class="dimple-text">
+              His college sweetheart, <strong>Dimple Cheema</strong>, chose to never marry anyone else. For over two decades, she has lived alone with Vikram's memory.
+            </p>
+            <blockquote class="dimple-quote">
+              "When you love someone so deeply, that love never dies. He lived for 24 years, but lived a life people can only dream of."
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 07 -->
+    <div class="chapter-strip" id="act7">
+      <div class="strip-num">CHAPTER 07</div>
+      <div class="strip-title">THE ETERNAL FLAME // DRAS WAR MEMORIAL</div>
+      <div class="strip-alt">LADAKH, INDIA</div>
+    </div>
+
+    <!-- ACT 7: MEMORIAL & JAWANS -->
+    <section class="section memorial-section">
+      <div class="grid-3-col">
+        <!-- Photo 11: Dras Entrance -->
+        <div class="photo-card brutal-card" data-caption="The entrance to Kargil War Memorial, Dras, under the towering peaks of Tololing.">
+          <div class="card-badge bg-saffron">VIJAYPATH</div>
+          <div class="img-wrapper">
+            <img src="images/dras_entrance.jpg" alt="Dras Kargil War Memorial Entrance" class="story-img">
+            <button class="expand-btn" data-img="images/dras_entrance.jpg" data-title="Vijaypath // Entrance to Dras Kargil War Memorial">🔍 INSPECT</button>
+          </div>
+          <div class="photo-caption-bar">
+            <span>DRAS, LADAKH</span>
+            <span>MEMORIAL GATEWAY</span>
+          </div>
+          <p class="micro-caption">The pathway honoring the 527 soldiers who made the supreme sacrifice.</p>
+        </div>
+
+        <!-- Photo 12: Jawans Saluting -->
+        <div class="photo-card brutal-card" data-caption="Indian Army jawans paying ceremonial salute at the Kargil War Memorial under the national flag.">
+          <div class="card-badge bg-green text-white">THE GUARDIANS</div>
+          <div class="img-wrapper">
+            <img src="images/dras_jawans.jpg" alt="Indian Army jawans at Dras War Memorial" class="story-img">
+            <button class="expand-btn" data-img="images/dras_jawans.jpg" data-title="Indian Army Jawans at the Kargil War Memorial, Dras">🔍 INSPECT</button>
+          </div>
+          <div class="photo-caption-bar">
+            <span>INDIAN ARMY JAWANS</span>
+            <span>CEREMONIAL GUARD</span>
+          </div>
+          <p class="micro-caption">"For your tomorrow, we gave our today."</p>
+        </div>
+
+        <!-- Photo 13: Amar Jawan Jyoti -->
+        <div class="photo-card brutal-card" data-caption="Amar Jawan Jyoti - inverted rifle, steel helmet, and the eternal flame that never goes out.">
+          <div class="card-badge bg-yellow">AMAR JAWAN JYOTI</div>
+          <div class="img-wrapper">
+            <img src="images/amar_jawan.jpg" alt="Amar Jawan Jyoti Eternal Flame" class="story-img">
+            <button class="expand-btn" data-img="images/amar_jawan.jpg" data-title="Amar Jawan Jyoti // The Eternal Flame of the Unknown Soldier">🔍 INSPECT</button>
+          </div>
+          <div class="photo-caption-bar">
+            <span>ETERNAL FLAME</span>
+            <span>IMMORTAL MEMORY</span>
+          </div>
+          <p class="micro-caption">A soldier never dies until he is forgotten. We will never forget.</p>
+        </div>
+      </div>
+
+      <!-- THE EPITAPH STONE -->
+      <div class="epitaph-stone brutal-box">
+        <div class="stone-border">
+          <h2 class="epitaph-words">
+            "WHEN YOU GO HOME,<br>
+            TELL THEM OF US AND SAY,<br>
+            FOR YOUR TOMORROW,<br>
+            WE GAVE OUR TODAY."
+          </h2>
+          <div class="stone-credit">— KOHIMA & KARGIL WAR MEMORIAL EPITAPH</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE MEMORIAL TRIBUTE -->
+    <section class="section tribute-interactive-section" id="tribute">
+      <div class="tribute-box brutal-card bg-saffron-light">
+        <div class="tape-strip-top"></div>
+        <div class="tribute-badge">INTERACTIVE TRIBUTE</div>
+        <h2 class="tribute-title">STAND TO ATTENTION. SALUTE CAPTAIN VIKRAM BATRA.</h2>
+        <p class="tribute-sub">Every click logs a live salute from a proud citizen to Captain Batra and the braves of Kargil.</p>
+
+        <div class="salute-counter-large" id="mainSaluteCounter">
+          14,892
+        </div>
+        <div class="salute-label">TOTAL CITIZEN SALUTES RECORDED</div>
+
+        <div class="tribute-actions">
+          <button id="mainSaluteBtn" class="brutal-btn btn-saffron salute-btn-huge">
+            <span class="btn-icon">🇮🇳</span> PRESS TO SALUTE (JAI HIND!)
+          </button>
+          <button id="lightDiyaBtn" class="brutal-btn btn-yellow">
+            <span class="btn-icon">🪔</span> LIGHT AN ETERNAL DIYA
+          </button>
+        </div>
+
+        <div id="saluteToast" class="salute-toast hidden">
+          🫡 SALUTE REGISTERED! "YEH DIL MAANGE MORE!" 🇮🇳
+        </div>
+
+        <div id="diyaFlameDisplay" class="diya-display hidden">
+          <div class="flame-symbol">🔥</div>
+          <div class="flame-text">An eternal Jyoti is lit in your heart for Captain Vikram Batra & 13 JAK RIF.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALL IMAGES ARCHIVE (IMAGE GALLERY) -->
+    <section class="section gallery-section" id="gallery">
+      <div class="gallery-header brutal-box bg-black text-white">
+        <h2 class="gallery-title">ARCHIVAL PHOTO REPOSITORY // ALL 15 VERIFIED HISTORIC MEDIA</h2>
+        <p class="gallery-desc">Click any photograph to inspect in full-resolution with field archival coordinates.</p>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Rendered by JS or static HTML -->
+      </div>
+    </section>
+
+    <!-- FOOTER / HUMAN DEDICATION (NOT AI) -->
+    <footer class="story-footer brutal-box bg-black text-white">
+      <div class="footer-top">
+        <div class="footer-col">
+          <div class="footer-badge">A CITIZEN'S TRIBUTE</div>
+          <h3 class="footer-h">CAPTAIN VIKRAM BATRA, PVC</h3>
+          <p class="footer-p">
+            09 September 1974 – 07 July 1999<br>
+            Point 4875, Dras Sector, Kargil, Jammu & Kashmir<br>
+            Awarded the <strong>Param Vir Chakra</strong> (Posthumous)
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-badge bg-saffron text-black">NO AI JARGON // RAW HISTORY</div>
+          <p class="footer-p">
+            This website was built as an honest, unfiltered tribute using real archival photographs from the Kargil War, Wikimedia Commons, and the official records of the Indian Army.
+          </p>
+          <p class="footer-p">
+            Dedicated to the 527 Indian soldiers who gave their lives in Operation Vijay (1999).
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-badge bg-yellow text-black">REGIMENTAL CREED</div>
+          <blockquote class="footer-motto">
+            "Durge Mata Ki Jai"<br>
+            "Jai Mata Di"<br>
+            ★ 13 JAK RIFLES ★
+          </blockquote>
+          <button id="backToTopBtn" class="brutal-btn btn-white btn-sm">↑ BACK TO SUMMIT</button>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>🇮🇳 BHARAT MATA KI JAI // VANDE MATARAM</span>
+        <span>POINT 4875 WILL FOREVER BE BATRA TOP</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- LIGHTBOX MODAL FOR FULL SCREEN IMAGE INSPECTION -->
+  <div id="imageModal" class="image-modal hidden">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-dialog brutal-box">
+      <div class="modal-header">
+        <span class="modal-title" id="modalTitle">ARCHIVAL INSPECTOR</span>
+        <button id="modalCloseBtn" class="modal-close-btn" aria-label="Close modal">✕ CLOSE [ESC]</button>
+      </div>
+      <div class="modal-img-container">
+        <img id="modalImg" src="" alt="Enlarged Archival Photograph">
+      </div>
+      <div class="modal-footer">
+        <div class="modal-caption" id="modalCaption"></div>
+        <div class="modal-stamp">VERIFIED HISTORIC RECORD // 1999</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
